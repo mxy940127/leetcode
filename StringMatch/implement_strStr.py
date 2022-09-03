@@ -20,7 +20,7 @@ class Solution:
         1.偏移表 模式串中字符在模式串中出现的最右位置到尾部的距离+1，未出现则为模式串字符长度+1
         2.循环遍历
     """
-    def strStr(self, haystack: str, needle: str) -> int:
+    def str_str(self, haystack: str, needle: str) -> int:
         if needle == "":
             return 0
         lnd = len(needle)
@@ -28,10 +28,10 @@ class Solution:
         if lnd > lnh:
             return -1
         """计算偏移表"""
-        def calOffset(srcStr: str) -> dict:
-            return {v: len(srcStr) - k for k, v in enumerate(srcStr)}
+        def cal_offset(src_str: str) -> dict:
+            return {v: len(src_str) - k for k, v in enumerate(src_str)}
         idx = 0
-        dic = calOffset(needle)
+        dic = cal_offset(needle)
         while idx + lnd <= lnh:
             if haystack[idx: idx + lnd] == needle:
                 return idx
